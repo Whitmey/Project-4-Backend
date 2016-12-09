@@ -8,9 +8,7 @@ class ProfilesController < ApplicationController
 
     # render json: @profiles
 
-    render :json => {
-      :profile => @profiles.as_json(:except => [:id])
-    }
+    render :json => @profiles.as_json(:except => [user: :profiles])
   end
 
   # GET /profiles/1

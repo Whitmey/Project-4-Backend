@@ -5,8 +5,8 @@ class ReviewsController < ApplicationController
   # GET /reviews
   def index
     @reviews = Review.all
-
     render json: @reviews
+
   end
 
   # GET /reviews/1
@@ -58,6 +58,6 @@ class ReviewsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def review_params
-      params.require(:review).permit(:user_id, :review_id, :rating, :body)
+      params.require(:review).permit(:user_id, :review_id, :rating, :body, :profile_id)
     end
 end
