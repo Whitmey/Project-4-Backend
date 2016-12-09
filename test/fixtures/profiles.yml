@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rank: MyString
+  fee: 1
+  contact: MyString
+  game: one
+  user: one
+
+two:
+  rank: MyString
+  fee: 1
+  contact: MyString
+  game: two
+  user: two
