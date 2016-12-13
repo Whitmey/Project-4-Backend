@@ -1,9 +1,11 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   # GET /games
   def index
-    @games = Game.all
+    # @games = Game.all
+    @games = Game.where game_params
 
     render json: @games
   end
@@ -46,6 +48,6 @@ class GamesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def game_params
-      params.require(:game).permit(:name, :image)
+      params.permit(:name, :image, :profile_id)
     end
 end

@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles
   def index
-    @profiles = Profile.all
+    # @profiles = Profile.all
+    @profiles = Profile.where profile_params
 
     # render json: @profiles
 
@@ -60,6 +61,6 @@ class ProfilesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def profile_params
-    params.require(:profile).permit(:rank, :fee, :contact, :game_id, :user_id)
+    params.permit(:rank, :fee, :contact, :game_id, :user_id)
   end
 end
