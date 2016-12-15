@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20161215133817) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "image"
     t.string   "text"
+    t.string   "image"
     t.index ["game_id"], name: "index_profiles_on_game_id", using: :btree
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
