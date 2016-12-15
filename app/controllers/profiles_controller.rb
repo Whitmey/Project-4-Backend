@@ -61,6 +61,6 @@ class ProfilesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def profile_params
-    params.permit(:rank, :fee, :contact, :game_id, :user_id)
+    params.permit(:rank, :fee, :contact, :image, :text, :game_id, :user_id)
   end
 end
